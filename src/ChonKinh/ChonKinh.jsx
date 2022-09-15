@@ -74,15 +74,14 @@ export default class ChonKinh extends Component {
     }
 
     changerGlass = (getID) => {
-        console.log(getID);
-        let product = this.productList.find((glass) => { 
+        let product = this.productList.find((glass) => {
             return glass.id == getID;
-         })
-        let { name, url, desc} = product;
+        })
+        let { name, url, desc } = product;
         this.setState({
-            name: `${name}`,
-            url : `${url}`,
-            desc: `${desc}`
+            name: name,
+            url: url,
+            desc: desc
         })
     }
 
@@ -92,16 +91,18 @@ export default class ChonKinh extends Component {
             return <div key={id} className="col-2 py-1">
                 <button onClick={() => {
                     this.changerGlass(id)
-                 }} className='btn shadow-none'>
+                }} className='btn shadow-none'>
                     <img className='img-fluid' src={url} alt="" />
-                </button> 
+                </button>
             </div>
         })
     }
     render() {
         return (
-            <div className='container'>
-                <div className="row p-5">
+            <div>
+                <h1 className="glass__tilte p-3">TRY GLASSES APP ONLINE</h1>
+                <div className='container'>
+                <div className="row p-4">
                     <div className="col-6">
                         <div className="glass__left mx-auto">
                             <div className="glass__img">
@@ -119,9 +120,11 @@ export default class ChonKinh extends Component {
                     </div>
                 </div>
                 <div className="row p-2">
-                {this.renderGlass()}
+                    {this.renderGlass()}
+                </div>
             </div>
             </div>
+            
         )
     }
 }

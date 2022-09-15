@@ -13,6 +13,11 @@ code {
     monospace;
 }
 
+.glass__tilte{
+  color: white;
+  background-color: rgba(0, 115, 255, 0.6);
+}
+
 .glass__left,
 .glass__right{
   position: relative;
